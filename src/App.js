@@ -3,7 +3,7 @@ import './App.css';
 import {Link, Route, Routes} from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
-import Product from "./Product";
+import Products from "./Products";
 
 const App = () => {
     return (
@@ -15,12 +15,15 @@ const App = () => {
                 <li>
                     <Link to={"/about"}>About</Link>
                 </li>
+                <li>
+                    <Link to={"/products"}>Products List</Link>
+                </li>
             </ul>
-            <hr />
+            <hr/>
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/products/:productId" element={<Product />} />
+                <Route path="/" element={<Home/>}/>
+                <Route path="/about" element={<About/>}/>
+                <Route path="/products/*" element={<Products/>}/>
             </Routes>
         </div>
     );
