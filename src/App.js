@@ -3,6 +3,7 @@ import './App.css';
 import {Link, Route, Routes} from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
+import Product from "./Product";
 
 const App = () => {
     return (
@@ -15,9 +16,11 @@ const App = () => {
                     <Link to={"/about"}>About</Link>
                 </li>
             </ul>
+            <hr />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/products/:productId" element={<Product />} />
             </Routes>
         </div>
     );
